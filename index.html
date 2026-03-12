@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webimax | Law Firm Client Acquisition</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* GLOBAL */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: #ffffff;
+            color: #1c1c1c;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+        
+        h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+        }
+        /* BUTTON */
+        
+        .btn {
+            display: inline-block;
+            background: #2b66c5;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
+        
+        .btn:hover {
+            background: #1d4fa5;
+            transform: translateY(-2px);
+        }
+        /* NAVBAR */
+        
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            z-index: 999;
+        }
+        
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .nav-inner img {
+            height: 40px;
+        }
+        /* HERO */
+        
+        .hero {
+            background: #f7f9fc;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .hero-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+        
+        .hero-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        
+        .hero-form button {
+            width: 100%;
+            border: none;
+        }
+        /* TRUST LOGOS */
+        
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .logos img {
+            height: 40px;
+            opacity: .7;
+            transition: .3s;
+        }
+        
+        .logos img:hover {
+            opacity: 1;
+        }
+        /* GRID */
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 30px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 30px;
+        }
+        /* CARDS */
+        
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            transition: .3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-6px);
+        }
+        /* OUR FOCUS */
+        
+        .focus-section {
+            background: #ffffff;
+        }
+        
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .focus-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+            text-align: center;
+            transition: .3s;
+        }
+        
+        .focus-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        /* PRACTICE GRID */
+        
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 25px;
+        }
+        
+        .practice-grid div {
+            background: #f4f6fb;
+            padding: 18px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        /* FOUNDER */
+        
+        .founder {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .founder img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        /* FUNNEL */
+        
+        .funnel img {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+        /* FAQ */
+        
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 16px 0;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        /* CTA */
+        
+        .cta {
+            background: white;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: #f4f6fb;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        footer img {
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        /* ANIMATION */
+        
+        .fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s;
+        }
+        
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* RESPONSIVE */
+        
+        @media(max-width:1000px) {
+            .hero-grid,
+            .grid-2,
+            .grid-3,
+            .practice-grid,
+            .focus-grid,
+            .founder {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 34px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+        <div class="container nav-inner">
+
+            <img src="WebiMax_Logo-Digital.png">
+
+            <a class="btn">Book Strategy Call</a>
+
+        </div>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-grid">
+
+            <div class="fade">
+
+                <h1>Get More Qualified Legal Consultations for Your Law Firm</h1>
+
+                <p>
+                    We help attorneys generate consistent case inquiries through Google Ads, SEO, and high-intent digital campaigns tailored for practice areas like Personal Injury, Family Law, Criminal Defense, Immigration, and more.
+                </p>
+
+                <ul>
+                    <li>Experience with legal marketing</li>
+                    <li>Performance-focused campaigns</li>
+                    <li>Transparent reporting</li>
+                </ul>
+
+                <br>
+
+                <a class="btn">Get Free Case Growth Audit</a>
+
+            </div>
+
+            <div class="hero-form fade">
+
+                <h3>Free Marketing Audit</h3>
+
+                <input placeholder="Full Name">
+                <input placeholder="Email">
+                <input placeholder="Law Firm Website">
+
+                <button class="btn">Request Free Audit</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TRUST -->
+
+    <section>
+
+        <div class="container logos fade">
+
+            <img src="us_news.png">
+            <img src="clutch.png">
+            <img src="newsweek.png">
+            <img src="upcity.png">
+            <img src="business.png">
+
+        </div>
+
+    </section>
+
+    <!-- PROBLEM -->
+
+    <section>
+
+        <div class="container fade">
+
+            <h2>Why Most Law Firm Marketing Fails</h2>
+
+            <ul>
+                <li>They get clicks but not consultations</li>
+                <li>Their ads attract unqualified leads</li>
+                <li>Agencies focus on traffic instead of signed cases</li>
+                <li>Competitors dominate Google search results</li>
+                <li>Marketing budgets wasted on broad keywords</li>
+            </ul>
+
+            <p style="margin-top:20px;">
+                Our strategy focuses on high-intent clients actively searching for legal help.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CLIENT ACQUISITION -->
+
+    <section>
+
+        <div class="container">
+
+            <h2 class="fade">Our Legal Client Acquisition System</h2>
+
+            <div class="grid-2">
+
+                <div class="card fade">
+
+                    <h3>Google Ads for Attorneys</h3>
+
+                    <p>Capture people searching for legal help in real time.</p>
+
+                    <ul>
+                        <li>“personal injury lawyer near me”</li>
+                        <li>“divorce attorney consultation”</li>
+                        <li>“immigration lawyer USA”</li>
+                    </ul>
+
+                </div>
+
+                <div class="card fade">
+
+                    <h3>Local SEO for Law Firms</h3>
+
+                    <p>We help law firms appear in Google Maps and local searches.</p>
+
+                    <ul>
+                        <li>car accident lawyer Chicago</li>
+                        <li>criminal defense lawyer Dallas</li>
+                        <li>family attorney Miami</li>
+                    </ul>
+
+                    <p>This helps firms capture local clients actively looking for legal representation.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- OUR FOCUS -->
+
+    <section class="focus-section">
+
+        <div class="container">
+
+            <h2 class="fade">Our Focus</h2>
+
+            <div class="focus-grid">
+
+                <div class="focus-card fade">
+                    <h3>High-Intent Keywords</h3>
+                    <p>Target searches from people actively looking for legal help.</p>
+                </div>
+
+                <div class="focus-card fade">
+                    <h3>Top-of-Page Visibility</h3>
+                    <p>Ensure your firm appears prominently in search results.</p>
+                </div>
+
+                <div class="focus-card fade">
+                    <h3>Conversion Landing Pages</h3>
+                    <p>Landing pages designed to turn visitors into consultations.</p>
+                </div>
+
+                <div class="focus-card fade">
+                    <h3>Call & Form Tracking</h3>
+                    <p>Track every inquiry and measure campaign performance.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- LINKEDIN + REVIEWS -->
+
+    <section>
+
+        <div class="container grid-2">
+
+            <div class="card fade">
+
+                <h3>LinkedIn Account-Based Marketing</h3>
+
+                <p>For firms targeting corporate clients and high-value legal cases.</p>
+
+                <ul>
+                    <li>Law firm decision makers</li>
+                    <li>Corporate legal departments</li>
+                    <li>Business owners needing legal services</li>
+                    <li>High-value referral partners</li>
+                </ul>
+
+            </div>
+
+            <div class="card fade">
+
+                <h3>Reputation & Review Growth</h3>
+
+                <ul>
+                    <li>Google reviews</li>
+                    <li>Legal directory reputation</li>
+                    <li>Client trust signals</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRACTICE AREAS -->
+
+    <section>
+
+        <div class="container">
+
+            <h2 class="fade">Practice Areas We Work With</h2>
+
+            <div class="practice-grid fade">
+
+                <div>Personal Injury Lawyers</div>
+                <div>Car Accident Attorneys</div>
+                <div>Criminal Defense Lawyers</div>
+                <div>Family & Divorce Attorneys</div>
+                <div>Immigration Lawyers</div>
+                <div>Employment Lawyers</div>
+                <div>Estate Planning Attorneys</div>
+                <div>Business Attorneys</div>
+                <div>Bankruptcy Lawyers</div>
+                <div>Medical Malpractice Lawyers</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FUNNEL -->
+
+    <section>
+
+        <div class="container funnel fade">
+
+            <h2>Law Firm Client Acquisition Funnel</h2>
+
+            <img src="infographics.png">
+
+        </div>
+
+    </section>
+
+    <!-- WHY CHOOSE US -->
+
+    <section>
+
+        <div class="container founder fade">
+
+            <img src="Ken.jpg">
+
+            <div>
+
+                <h2>Why Law Firms Choose Us</h2>
+
+                <ul>
+                    <li>Data-driven campaigns</li>
+                    <li>Focus on signed cases</li>
+                    <li>High intent keyword targeting</li>
+                    <li>Conversion optimized landing pages</li>
+                    <li>Transparent reporting</li>
+                    <li>Years of digital marketing experience</li>
+                    <li>Industry specific strategy</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section>
+
+        <div class="container">
+
+            <h2 class="fade">FAQ</h2>
+
+            <div class="faq-item fade">
+                <h3>How much does law firm marketing cost?</h3>
+                <div class="faq-answer">Budgets depend on practice area and competition.</div>
+            </div>
+
+            <div class="faq-item fade">
+                <h3>How long does it take to get results?</h3>
+                <div class="faq-answer">Paid search generates leads quickly while SEO builds long-term visibility.</div>
+            </div>
+
+            <div class="faq-item fade">
+                <h3>Do you work with firms across the United States?</h3>
+                <div class="faq-answer">Yes, we work with law firms nationwide.</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container fade">
+
+            <h2>Ready to Grow Your Law Firm with Smarter Marketing?</h2>
+
+            <p>Request a free marketing audit and strategy consultation.</p>
+
+            <br>
+
+            <a class="btn">Request Free Marketing Audit</a>
+            <a class="btn" style="margin-left:10px;">Book Strategy Consultation</a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <img src="WebiMax_Logo-Digital.png">
+
+        <p>© Webimax Legal Marketing</p>
+
+    </footer>
+
+    <script>
+        /* SCROLL ANIMATION */
+
+        const elements = document.querySelectorAll(".fade");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        });
+
+        elements.forEach(el => observer.observe(el));
+
+        /* FAQ */
+
+        document.querySelectorAll(".faq-item").forEach(item => {
+            item.addEventListener("click", () => {
+                item.classList.toggle("active");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
