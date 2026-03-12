@@ -163,7 +163,9 @@
         .gradient-text {
             background: linear-gradient(90deg, #1d4ed8, #3aa0ff);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
+            color: transparent;
         }
         /* TEXT */
         
@@ -354,13 +356,6 @@
             gap: 30px;
             margin-top: 30px;
         }
-        
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin-top: 30px;
-        }
         /* PROBLEM SECTION */
         
         .problem-section {
@@ -379,6 +374,23 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 25px;
+        }
+        
+        .acquisition-section {
+            padding-top: 80px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media(max-width:900px) {
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
         }
         /* CARD */
         
@@ -627,6 +639,88 @@
         
         .section-light {
             background: #f7f9fc;
+        }
+        /* INFOGRAPHIC SECTION */
+        
+        .infographic-section {
+            background: #ffffff;
+            text-align: center;
+            padding: 90px 0;
+        }
+        
+        .infographic-desc {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: #555;
+            font-size: 18px;
+        }
+        
+        .infographic-wrapper {
+            background: #f7f9fc;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .infographic-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #2b66c5, #ff7a2f);
+        }
+        
+        .infographic-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .infographic-wrapper img {
+            width: 95%;
+            max-width: 1100px;
+            margin: auto;
+            display: block;
+        }
+        /* TABLET */
+        
+        @media(max-width:900px) {
+            .infographic-section {
+                padding: 70px 0;
+            }
+            .infographic-desc {
+                font-size: 17px;
+                padding: 0 10px;
+            }
+            .infographic-wrapper {
+                padding: 20px;
+            }
+            .infographic-wrapper img {
+                width: 100%;
+            }
+        }
+        /* MOBILE */
+        
+        @media(max-width:600px) {
+            .infographic-section {
+                padding: 60px 0;
+            }
+            .infographic-desc {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+            .infographic-wrapper {
+                padding: 15px;
+                border-radius: 12px;
+            }
+            .infographic-wrapper img {
+                width: 100%;
+                border-radius: 8px;
+            }
         }
         /* CTA */
         
@@ -920,6 +1014,63 @@
                 transform: translateY(0);
             }
         }
+        /* OUR FOCUS SECTION */
+        
+        .focus-section {
+            background: #ffffff;
+            padding: 70px 0;
+            text-align: center;
+        }
+        /* GRID */
+        
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-top: 35px;
+        }
+        /* CARD */
+        
+        .focus-card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 17px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            position: relative;
+            transition: 0.35s;
+        }
+        /* GRADIENT BORDER */
+        
+        .focus-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2b66c5, #ff7a2f);
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .focus-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        /* RESPONSIVE */
+        
+        @media(max-width:900px) {
+            .focus-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media(max-width:600px) {
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+        }
         /* MOBILE */
         
         @media(max-width:768px) {
@@ -1137,13 +1288,15 @@ Request Free Audit
 
     <!-- CLIENT ACQUISITION -->
 
-    <section>
+    <section class="acquisition-section">
 
         <div class="container">
 
-            <h2 class="fade">Our Legal Client Acquisition System</h2>
+            <h2 class="fade section-title">Our Legal Client Acquisition System</h2>
 
-            <div class="grid-2">
+            <div class="grid-4">
+
+                <!-- CARD 1 -->
 
                 <div class="card fade">
 
@@ -1159,6 +1312,9 @@ Request Free Audit
 
                 </div>
 
+
+                <!-- CARD 2 -->
+
                 <div class="card fade">
 
                     <h3>Local SEO for Law Firms</h3>
@@ -1173,6 +1329,72 @@ Request Free Audit
 
                     <p>This helps firms capture local clients actively looking for legal representation.</p>
 
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="card fade">
+
+                    <h3>LinkedIn Account-Based Marketing</h3>
+
+                    <p>For law firms targeting corporate clients, business owners, or high-value legal cases.</p>
+
+                    <ul>
+                        <li>Law firm decision makers</li>
+                        <li>Corporate legal departments</li>
+                        <li>Business owners needing legal services</li>
+                        <li>High-value referral partners</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- CARD 4 -->
+
+                <div class="card fade">
+
+                    <h3>Reputation & Review Growth</h3>
+
+                    <p>Clients trust law firms with strong reviews.</p>
+
+                    <ul>
+                        <li>Google reviews</li>
+                        <li>Legal directory reputation</li>
+                        <li>Client trust signals</li>
+                    </ul>
+
+                    <p>Strong reputation signals increase consultation requests.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="focus-section">
+
+        <div class="container">
+
+            <h2 class="section-title">Our Focus</h2>
+
+            <div class="focus-grid">
+
+                <div class="focus-card">
+                    High-intent keywords
+                </div>
+
+                <div class="focus-card">
+                    Top-of-page ad visibility
+                </div>
+
+                <div class="focus-card">
+                    Conversion-optimized landing pages
+                </div>
+
+                <div class="focus-card">
+                    Call and form tracking
                 </div>
 
             </div>
@@ -1255,6 +1477,31 @@ Request Free Audit
                     <p>This helps reduce <strong>unqualified inquiries</strong> and improve consultation quality.</p>
 
                 </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INFOGRAPHIC SECTION -->
+
+    <section class="infographic-section">
+
+        <div class="container">
+
+            <h2 class="section-title">Law Firm Client Acquisition Funnel</h2>
+
+            <p style="text-align:center;font-size:22px;font-weight:600;color:#1c1c1c;margin-bottom:30px;">
+                How Online Searches Turn Into Signed Legal Cases
+            </p>
+            <p class="infographic-desc">
+                Our marketing strategy focuses on guiding potential clients through a structured journey — from searching for legal help to booking a consultation with your firm.
+            </p>
+
+            <div class="infographic-wrapper">
+
+                <img src="infographics.png" alt="Legal Client Acquisition Process">
 
             </div>
 
