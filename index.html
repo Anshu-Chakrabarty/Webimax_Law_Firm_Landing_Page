@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Webimax | Law Firm Client Acquisition</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -31,7 +33,7 @@
         }
         
         section {
-            padding: 60px 0;
+            padding: 70px 0;
         }
         
         h1 {
@@ -69,15 +71,17 @@
             background: #2b66c5;
             color: white;
             padding: 14px 28px;
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
-            transition: .3s;
+            transition: 0.3s;
+            box-shadow: 0 8px 18px rgba(43, 102, 197, 0.25);
         }
         
         .btn:hover {
             background: #1d4fa5;
             transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(43, 102, 197, 0.35);
         }
         /* NAVBAR */
         
@@ -99,110 +103,510 @@
         .nav-inner img {
             height: 40px;
         }
+        /* RIGHT SIDE (PHONE + BUTTON) */
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        /* PHONE NUMBER */
+        
+        .phone {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #4b5563;
+            font-weight: 700;
+        }
+        /* MOBILE RESPONSIVE */
+        
+        @media(max-width:768px) {
+            /* hide phone number */
+            .phone {
+                display: none;
+            }
+            /* reduce logo size */
+            .nav-inner img {
+                height: 32px;
+            }
+            /* smaller button */
+            .btn {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+        }
         /* HERO */
+        /* HERO MODERN DESIGN */
         
         .hero {
-            background: #f7f9fc;
+            background: #f5f7fb;
+            padding: 40px 0;
         }
         
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
             align-items: center;
         }
+        /* HEADING */
         
-        .hero-form {
+        .hero-title {
+            font-size: 55px;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #1c1c1c;
+            margin-bottom: 25px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #1d4ed8, #3aa0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* TEXT */
+        
+        .hero-desc {
+            font-size: 19px;
+            color: #555;
+            max-width: 560px;
+            margin-bottom: 25px;
+        }
+        /* BULLET LIST */
+        
+        .hero-list {
+            margin-bottom: 30px;
+        }
+        
+        .hero-list li {
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+        /* BUTTON */
+        
+        .hero-btn {
+            margin-top: 10px;
+        }
+        /* FORM */
+        /* HERO FORM MODERN */
+        
+        .hero-form-card {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+            max-width: 440px;
+            position: relative;
+        }
+        /* GRADIENT TOP LINE */
+        
+        .form-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            border-radius: 16px 16px 0 0;
+            background: linear-gradient(90deg, #2b66c5, #ff7a2f);
+        }
+        /* TITLE */
+        
+        .form-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            margin-top: 5px;
+        }
+        /* INPUTS */
+        
+        .hero-form-card input {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #e4e7ec;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            font-size: 15px;
+            transition: 0.2s;
+            background: #fafafa;
         }
         
-        .hero-form input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+        .hero-form-card input:focus {
+            outline: none;
+            border-color: #2b66c5;
+            background: white;
         }
+        /* BUTTON */
         
-        .hero-form button {
+        .form-btn {
             width: 100%;
+            padding: 16px;
+            background: #2b66c5;
+            color: white;
             border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
         }
-        /* TRUST LOGOS */
+        
+        .form-btn:hover {
+            background: #1d4fa5;
+            transform: translateY(-2px);
+        }
+        /* ===== GRADIENT BORDER SYSTEM ===== */
+        
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2b66c5, #ff7a2f);
+        }
+        /* hover effect */
+        
+        .gradient-border:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            transition: 0.35s;
+        }
+        /* LOGOS */
+        /* TRUST SECTION */
+        
+        .trust-section {
+            background: #ffffff;
+            /* keep white */
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 10px;
+            /* small gap */
+            border-top: 1px solid #e5e7eb;
+            /* divider */
+        }
+        
+        .trust-title {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #000000;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        /* LOGOS */
         
         .logos {
             display: flex;
             justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
             align-items: center;
+            gap: 70px;
+            flex-wrap: wrap;
+            transition: 0.3s;
         }
+        /* GREY LOGOS */
         
         .logos img {
-            height: 40px;
-            opacity: .7;
-            transition: .3s;
+            height: 45px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: 0.35s;
         }
+        /* HOVER EFFECT */
         
-        .logos img:hover {
+        .logos:hover img {
+            filter: grayscale(0%);
             opacity: 1;
+            transform: scale(1.08);
         }
-        /* GRID */
+        /* MOBILE GRID */
+        
+        @media(max-width:768px) {
+            .logos {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                justify-items: center;
+            }
+            .logos img {
+                height: 38px;
+            }
+        }
+        /* GRIDS */
         
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 28px;
+            gap: 30px;
             margin-top: 30px;
         }
         
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
+            gap: 30px;
             margin-top: 30px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        /* PROBLEM SECTION */
+        
+        .problem-section {
+            background: #f7f9fc;
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        /* GRID */
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+        }
+        /* CARD */
+        
+        .problem-card {
+            background: white;
+            padding: 28px;
+            border-radius: 14px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+            text-align: center;
+            transition: 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .problem-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2b66c5, #ff7a2f);
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+        /* ICON */
+        
+        .problem-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        /* TEXT */
+        
+        .problem-card p {
+            font-size: 15px;
+            color: #444;
+        }
+        /* BOTTOM TEXT */
+        
+        .problem-bottom {
+            text-align: center;
+            margin-top: 35px;
+            font-size: 28px;
+            font-weight: 500px;
+            color: #211a1a;
+        }
+        /* RESPONSIVE */
+        
+        @media(max-width:1000px) {
+            .problem-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media(max-width:600px) {
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
         }
         /* CARDS */
         
         .card {
             background: white;
             padding: 28px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-            transition: .3s;
+            border-radius: 14px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+            transition: 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2b66c5, #ff7a2f);
         }
         
         .card:hover {
             transform: translateY(-6px);
         }
-        /* OUR FOCUS */
+        /* REVIEW PROOF SECTION */
         
-        .focus-section {
+        .review-proof {
             background: #ffffff;
-        }
-        
-        .focus-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .focus-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+            padding: 80px 0;
             text-align: center;
-            transition: .3s;
+        }
+        /* HEADER */
+        
+        .section-head {
+            max-width: 650px;
+            margin: 0 auto 40px;
         }
         
-        .focus-card:hover {
+        .kicker {
+            display: inline-block;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #2b66c5;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .section-head h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .section-head p {
+            color: #666;
+            font-size: 17px;
+        }
+        /* REVIEW BOX */
+        
+        .review-box {
+            max-width: 420px;
+            margin: 40px auto 0;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 14px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .review-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #2b66c5, #ff7a2f);
+        }
+        /* HOVER EFFECT */
+        
+        .review-box:hover {
             transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+        /* TITLE */
+        
+        .review-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        /* RATING */
+        
+        .review-rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .review-score {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111;
+        }
+        
+        .review-stars {
+            color: #f5a623;
+            font-size: 22px;
+            letter-spacing: 3px;
+        }
+        /* REVIEW LINK */
+        
+        .review-link {
+            display: inline-block;
+            margin-top: 12px;
+            font-weight: 600;
+            color: #2b66c5;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .review-link:hover {
+            text-decoration: underline;
+        }
+        /* POWERED BY */
+        
+        .review-powered {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .clutch-logo {
+            height: 22px;
+        }
+        
+        .section-title {
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "⚖";
+            display: block;
+            font-size: 28px;
+            color: #2b66c5;
+            margin-top: 10px;
+            opacity: 0.6;
+        }
+        /* MOBILE */
+        
+        @media(max-width:768px) {
+            .section-head h2 {
+                font-size: 28px;
+            }
+            .review-box {
+                padding: 30px 20px;
+            }
         }
         /* PRACTICE GRID */
         
@@ -219,41 +623,10 @@
             border-radius: 8px;
             font-weight: 600;
         }
-        /* FOUNDER */
+        /* SECTION LIGHT BG */
         
-        .founder {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .founder img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        /* FUNNEL */
-        
-        .funnel img {
-            width: 100%;
-            border-radius: 12px;
-            margin-top: 25px;
-        }
-        /* FAQ */
-        
-        .faq-item {
-            border-bottom: 1px solid #ddd;
-            padding: 16px 0;
-            cursor: pointer;
-        }
-        
-        .faq-answer {
-            display: none;
-            padding-top: 10px;
-        }
-        
-        .faq-item.active .faq-answer {
-            display: block;
+        .section-light {
+            background: #f7f9fc;
         }
         /* CTA */
         
@@ -274,7 +647,7 @@
             height: 40px;
             margin-bottom: 10px;
         }
-        /* ANIMATION */
+        /* FADE ANIMATION */
         
         .fade {
             opacity: 0;
@@ -286,25 +659,323 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        .review-box {
+            max-width: 420px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .review-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .review-rating {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        
+        .review-score {
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        
+        .review-stars {
+            color: #ffb400;
+            letter-spacing: 3px;
+        }
+        
+        .review-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #2b66c5;
+        }
+        
+        .review-link:hover {
+            text-decoration: underline;
+        }
+        
+        .review-powered {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .clutch-logo {
+            height: 24px;
+        }
+        /* SECTION TITLES */
+        
+        .section-title {
+            font-size: 34px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        /* GRID BOXES */
+        /* GRID */
+        /* GRID */
+        
+        .box-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 40px auto;
+            justify-items: center;
+        }
+        /* INFO BOX */
+        
+        .info-box {
+            max-width: 260px;
+            width: 100%;
+            background: white;
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.4;
+            transition: 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+        /* GRADIENT TOP BORDER */
+        
+        .info-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2b66c5, #ff7a2f);
+        }
+        /* HOVER */
+        
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        /* CENTER LAST ROW FOR OPTIMIZATION SECTION */
+        
+        .optimize-section .box-grid .info-box:nth-child(4) {
+            grid-column: 1 / span 1;
+            justify-self: end;
+        }
+        
+        .optimize-section .box-grid .info-box:nth-child(5) {
+            grid-column: 2 / span 1;
+            justify-self: start;
+        }
+        /* CENTER SINGLE BOX FOR REPORT SECTION */
+        
+        .report-section .box-grid .info-box:nth-child(4) {
+            grid-column: 2;
+        }
+        /* TABLET */
+        
+        @media(max-width:900px) {
+            .box-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .optimize-section .box-grid .info-box:nth-child(4),
+            .optimize-section .box-grid .info-box:nth-child(5),
+            .report-section .box-grid .info-box:nth-child(4) {
+                grid-column: auto;
+                justify-self: center;
+            }
+        }
+        /* MOBILE */
+        
+        @media(max-width:600px) {
+            .box-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-box {
+                max-width: 320px;
+            }
+        }
+        /* NOTES */
+        
+        .section-note {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+            color: #555;
+            font-size: 17px;
+        }
+        /* SECTION BACKGROUNDS */
+        
+        .optimize-section {
+            background: #ffffff;
+            padding: 80px 0;
+        }
+        
+        .report-section {
+            background: #f9fafc;
+            padding: 80px 0;
+        }
+        /* FINAL CTA */
+        
+        .final-cta {
+            background: #f4f6f9;
+            text-align: center;
+            padding: 90px 0;
+        }
+        
+        .final-cta h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .final-cta p {
+            max-width: 650px;
+            margin: auto;
+            margin-bottom: 35px;
+            color: #555;
+        }
+        /* CTA BUTTONS */
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-outline {
+            background: white;
+            color: #2b66c5;
+            border: 2px solid #2b66c5;
+        }
+        
+        .btn-outline:hover {
+            background: #2b66c5;
+            color: white;
+        }
+        /* SECTION */
+        
+        .why-simple {
+            padding: 100px 0;
+            background: #ffffff;
+            text-align: center;
+        }
+        
+        .why-title {
+            font-size: 38px;
+            margin-bottom: 50px;
+        }
+        /* TRIANGLE TEXT */
+        
+        .triangle-text p {
+            margin: 16px auto;
+            font-size: 20px;
+            color: #161515;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s forwards;
+        }
+        /* INVERTED TRIANGLE WIDTHS */
+        
+        .t1 {
+            max-width: 350px;
+            animation-delay: 0.1s;
+        }
+        
+        .t2 {
+            max-width: 500px;
+            animation-delay: 0.3s;
+        }
+        
+        .t3 {
+            max-width: 650px;
+            animation-delay: 0.5s;
+        }
+        
+        .t4 {
+            max-width: 780px;
+            animation-delay: 0.7s;
+        }
+        
+        .t5 {
+            max-width: 900px;
+            animation-delay: 0.9s;
+        }
+        /* ANIMATION */
+        
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* MOBILE */
+        
+        @media(max-width:768px) {
+            .triangle-text p {
+                max-width: 100% !important;
+                font-size: 18px;
+            }
+            .why-title {
+                font-size: 30px;
+            }
+        }
+        /* MOBILE */
+        
+        @media(max-width:900px) {
+            .box-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media(max-width:600px) {
+            .box-grid {
+                grid-template-columns: 1fr;
+            }
+        }
         /* RESPONSIVE */
         
         @media(max-width:1000px) {
             .hero-grid,
             .grid-2,
             .grid-3,
-            .practice-grid,
-            .focus-grid,
-            .founder {
+            .grid-4,
+            .practice-grid {
                 grid-template-columns: 1fr;
             }
             h1 {
-                font-size: 34px;
+                font-size: 34px
             }
             h2 {
-                font-size: 28px;
+                font-size: 28px
+            }
+        }
+        
+        @media(max-width:1000px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-title {
+                font-size: 40px;
+            }
+            .hero-form-card {
+                max-width: 100%;
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -314,12 +985,29 @@
     <div class="navbar">
         <div class="container nav-inner">
 
-            <img src="WebiMax_Logo-Digital.png">
+            <!-- LOGO -->
+            <img src="WebiMax_Logo-Digital.png" alt="Webimax Logo">
 
-            <a class="btn">Book Strategy Call</a>
+            <!-- RIGHT SIDE -->
+            <div class="nav-right">
+
+                <div class="phone">
+                    <span class="phone">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#000" viewBox="0 0 24 24">
+<path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011-.24c1.12.37 2.33.57 3.59.57a1 1 0 011 1V21a1 1 0 01-1 1C10.07 22 2 13.93 2 3a1 1 0 011-1h3.49a1 1 0 011 1c0 1.26.2 2.47.57 3.59a1 1 0 01-.24 1l-2.2 2.2z"/>
+</svg>
+
+856-830-6359
+</span>
+                </div>
+
+                <a class="btn">Book Strategy Call</a>
+
+            </div>
 
         </div>
     </div>
+
 
     <!-- HERO -->
 
@@ -327,35 +1015,47 @@
 
         <div class="container hero-grid">
 
-            <div class="fade">
+            <!-- LEFT CONTENT -->
 
-                <h1>Get More Qualified Legal Consultations for Your Law Firm</h1>
+            <div class="hero-left">
 
-                <p>
+                <h1 class="hero-title">
+                    Get More Qualified <br>
+                    <span class="gradient-text">Legal Consultations</span> <br> for Your Law Firm
+                </h1>
+
+                <p class="hero-desc">
                     We help attorneys generate consistent case inquiries through Google Ads, SEO, and high-intent digital campaigns tailored for practice areas like Personal Injury, Family Law, Criminal Defense, Immigration, and more.
                 </p>
 
-                <ul>
+                <ul class="hero-list">
                     <li>Experience with legal marketing</li>
                     <li>Performance-focused campaigns</li>
                     <li>Transparent reporting</li>
                 </ul>
 
-                <br>
-
-                <a class="btn">Get Free Case Growth Audit</a>
+                <a class="btn hero-btn">Get Free Case Growth Audit</a>
 
             </div>
 
-            <div class="hero-form fade">
 
-                <h3>Free Marketing Audit</h3>
+            <!-- RIGHT FORM -->
 
-                <input placeholder="Full Name">
-                <input placeholder="Email">
-                <input placeholder="Law Firm Website">
+            <div class="hero-form-card">
 
-                <button class="btn">Request Free Audit</button>
+                <div class="form-gradient"></div>
+
+                <h3 class="form-title">Free Marketing Audit</h3>
+
+                <input type="text" placeholder="Full Name">
+
+                <input type="email" placeholder="Email">
+
+                <input type="text" placeholder="Law Firm Website">
+
+                <button class="form-btn">
+Request Free Audit
+</button>
 
             </div>
 
@@ -363,45 +1063,77 @@
 
     </section>
 
-    <!-- TRUST -->
 
-    <section>
+    <!-- TRUST LOGOS -->
 
-        <div class="container logos fade">
+    <section class="trust-section">
 
-            <img src="us_news.png">
-            <img src="clutch.png">
-            <img src="newsweek.png">
-            <img src="upcity.png">
-            <img src="business.png">
+        <div class="container">
+
+            <p class="trust-title">
+                RATED THE BEST REPUTATION MANAGEMENT SERVICE FOR OVER 17 YEARS
+            </p>
+
+            <div class="logos">
+
+                <img src="us_news.png" alt="US News">
+                <img src="clutch.png" alt="Clutch">
+                <img src="newsweek.png" alt="Newsweek">
+                <img src="upcity.png" alt="UpCity">
+                <img src="business.png" alt="Business">
+
+            </div>
 
         </div>
 
     </section>
 
-    <!-- PROBLEM -->
 
-    <section>
+    <!-- WHY MARKETING FAILS -->
 
-        <div class="container fade">
+    <section class="problem-section">
 
-            <h2>Why Most Law Firm Marketing Fails</h2>
+        <div class="container">
 
-            <ul>
-                <li>They get clicks but not consultations</li>
-                <li>Their ads attract unqualified leads</li>
-                <li>Agencies focus on traffic instead of signed cases</li>
-                <li>Competitors dominate Google search results</li>
-                <li>Marketing budgets wasted on broad keywords</li>
-            </ul>
+            <h2 class="section-title">Why Most Law Firm Marketing Fails</h2>
 
-            <p style="margin-top:20px;">
+            <div class="problem-grid">
+
+                <div class="problem-card">
+                    <div class="problem-icon">📉</div>
+                    <p>They get clicks but not consultations</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⚠️</div>
+                    <p>Their ads attract unqualified leads</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🚫</div>
+                    <p>Agencies focus on traffic instead of signed cases</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🏆</div>
+                    <p>Competitors dominate Google search results</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <p>Marketing budgets wasted on broad keywords</p>
+                </div>
+
+            </div>
+
+            <p class="problem-bottom">
                 Our strategy focuses on high-intent clients actively searching for legal help.
             </p>
 
         </div>
 
     </section>
+
 
     <!-- CLIENT ACQUISITION -->
 
@@ -420,9 +1152,9 @@
                     <p>Capture people searching for legal help in real time.</p>
 
                     <ul>
-                        <li>“personal injury lawyer near me”</li>
-                        <li>“divorce attorney consultation”</li>
-                        <li>“immigration lawyer USA”</li>
+                        <li>“Personal injury lawyer near me”</li>
+                        <li>“Divorce attorney consultation”</li>
+                        <li>“Immigration lawyer USA”</li>
                     </ul>
 
                 </div>
@@ -434,9 +1166,9 @@
                     <p>We help law firms appear in Google Maps and local searches.</p>
 
                     <ul>
-                        <li>car accident lawyer Chicago</li>
-                        <li>criminal defense lawyer Dallas</li>
-                        <li>family attorney Miami</li>
+                        <li>Car accident lawyer Chicago</li>
+                        <li>Criminal defense lawyer Dallas</li>
+                        <li>Family attorney Miami</li>
                     </ul>
 
                     <p>This helps firms capture local clients actively looking for legal representation.</p>
@@ -449,34 +1181,79 @@
 
     </section>
 
-    <!-- OUR FOCUS -->
 
-    <section class="focus-section">
+    <!-- HOW WE GENERATE SIGNED CASES -->
+
+    <section class="section-light">
 
         <div class="container">
 
-            <h2 class="fade">Our Focus</h2>
+            <h2 class="fade">How We Help Law Firms Generate Signed Cases — Not Just Leads</h2>
 
-            <div class="focus-grid">
+            <p style="text-align:center;margin-bottom:30px;">
+                <strong>Marketing Focused on Real Clients, Not Just Clicks</strong>
+            </p>
 
-                <div class="focus-card fade">
-                    <h3>High-Intent Keywords</h3>
-                    <p>Target searches from people actively looking for legal help.</p>
+            <p style="text-align:center;margin-bottom:40px;">
+                Many digital marketing campaigns generate form submissions and phone calls, but that does not always mean those inquiries become actual cases. Our approach focuses on attracting <strong>qualified people actively looking for legal representation</strong>,
+                increasing the chances of turning consultations into signed clients.
+            </p>
+
+            <div class="grid-3">
+
+                <div class="card fade">
+
+                    <h3>High-Intent Keyword Targeting</h3>
+
+                    <p>We focus on searches from people who are actively seeking an attorney, not just browsing for legal information.</p>
+
+                    <p>Examples include searches like:</p>
+
+                    <ul>
+                        <li>“Hire personal injury lawyer near me”</li>
+                        <li>“Best divorce attorney consultation”</li>
+                        <li>“Criminal defense lawyer near me”</li>
+                        <li>“Immigration lawyer consultation”</li>
+                    </ul>
+
+                    <p>These searches usually indicate <strong>immediate legal need</strong>, which increases the likelihood of consultations.</p>
+
                 </div>
 
-                <div class="focus-card fade">
-                    <h3>Top-of-Page Visibility</h3>
-                    <p>Ensure your firm appears prominently in search results.</p>
+                <div class="card fade">
+
+                    <h3>Conversion-Focused Landing Pages</h3>
+
+                    <p>Our landing pages are designed to make it easy for potential clients to contact your firm quickly.</p>
+
+                    <p>Key elements include:</p>
+
+                    <ul>
+                        <li>Clear consultation call-to-action</li>
+                        <li>Mobile-friendly design</li>
+                        <li>Click-to-call phone numbers</li>
+                        <li>Simple case evaluation forms</li>
+                        <li>Fast loading pages</li>
+                    </ul>
+
+                    <p>The goal is to <strong>turn visitors into consultation requests.</strong></p>
+
                 </div>
 
-                <div class="focus-card fade">
-                    <h3>Conversion Landing Pages</h3>
-                    <p>Landing pages designed to turn visitors into consultations.</p>
-                </div>
+                <div class="card fade">
 
-                <div class="focus-card fade">
-                    <h3>Call & Form Tracking</h3>
-                    <p>Track every inquiry and measure campaign performance.</p>
+                    <h3>Lead Qualification Strategy</h3>
+
+                    <p>Not every inquiry is the right case for a law firm. We help improve lead quality by focusing campaigns on:</p>
+
+                    <ul>
+                        <li>Specific practice areas</li>
+                        <li>Target geographic locations</li>
+                        <li>Relevant legal search queries</li>
+                    </ul>
+
+                    <p>This helps reduce <strong>unqualified inquiries</strong> and improve consultation quality.</p>
+
                 </div>
 
             </div>
@@ -485,42 +1262,6 @@
 
     </section>
 
-    <!-- LINKEDIN + REVIEWS -->
-
-    <section>
-
-        <div class="container grid-2">
-
-            <div class="card fade">
-
-                <h3>LinkedIn Account-Based Marketing</h3>
-
-                <p>For firms targeting corporate clients and high-value legal cases.</p>
-
-                <ul>
-                    <li>Law firm decision makers</li>
-                    <li>Corporate legal departments</li>
-                    <li>Business owners needing legal services</li>
-                    <li>High-value referral partners</li>
-                </ul>
-
-            </div>
-
-            <div class="card fade">
-
-                <h3>Reputation & Review Growth</h3>
-
-                <ul>
-                    <li>Google reviews</li>
-                    <li>Legal directory reputation</li>
-                    <li>Client trust signals</li>
-                </ul>
-
-            </div>
-
-        </div>
-
-    </section>
 
     <!-- PRACTICE AREAS -->
 
@@ -548,94 +1289,249 @@
         </div>
 
     </section>
-
-    <!-- FUNNEL -->
-
-    <section>
-
-        <div class="container funnel fade">
-
-            <h2>Law Firm Client Acquisition Funnel</h2>
-
-            <img src="infographics.png">
-
-        </div>
-
-    </section>
-
-    <!-- WHY CHOOSE US -->
-
-    <section>
-
-        <div class="container founder fade">
-
-            <img src="Ken.jpg">
-
-            <div>
-
-                <h2>Why Law Firms Choose Us</h2>
-
-                <ul>
-                    <li>Data-driven campaigns</li>
-                    <li>Focus on signed cases</li>
-                    <li>High intent keyword targeting</li>
-                    <li>Conversion optimized landing pages</li>
-                    <li>Transparent reporting</li>
-                    <li>Years of digital marketing experience</li>
-                    <li>Industry specific strategy</li>
-                </ul>
-
+    <section class="review-proof">
+        <div class="container">
+            <div class="section-head reveal"> <span class="kicker">Results Delivered</span>
+                <h2>Trusted by teams that care about reputation</h2>
+                <p>No matter the objective, delivering results on time is paramount.</p>
             </div>
-
+            <div class="review-box">
+                <div class="review-title"> WebiMax Reviews </div>
+                <div class="review-rating"> <span class="review-score">5.0</span> <span class="review-stars">★★★★★</span> </div> <a href="https://clutch.co/profile/webimax?utm_source=widget&utm_medium=8&utm_campaign=widget&utm_content=num_reviews&utm_term=lp.webimax.com#reviews"
+                    target="_blank" class="review-link"> 26+ Verified Client Reviews → </a>
+                <div class="review-powered"> <span>Powered by</span> <img src="clutch.png" alt="Clutch Reviews" class="clutch-logo"> </div>
+            </div>
         </div>
-
     </section>
 
-    <!-- FAQ -->
 
-    <section>
+    <!-- MARKETING STRATEGIES PER PRACTICE -->
+
+    <section class="section-light">
 
         <div class="container">
 
-            <h2 class="fade">FAQ</h2>
+            <h2 class="fade">Marketing Strategies Tailored to Each Practice Area</h2>
 
-            <div class="faq-item fade">
-                <h3>How much does law firm marketing cost?</h3>
-                <div class="faq-answer">Budgets depend on practice area and competition.</div>
+            <p>Different legal services require different marketing approaches, keywords, and targeting strategies. Our campaigns are customized based on the type of cases a law firm wants to generate.</p>
+
+            <div class="grid-3">
+
+                <div class="card fade">
+
+                    <h3>Personal Injury & Car Accident Lawyers</h3>
+
+                    <p>This is one of the <strong>most competitive legal markets</strong>, where people urgently search for legal help.</p>
+
+                    <p>Our strategy focuses on:</p>
+
+                    <ul>
+                        <li>High-intent keywords like “car accident lawyer near me”</li>
+                        <li>Immediate response landing pages for consultations</li>
+                        <li>Call-focused campaigns for urgent cases</li>
+                        <li>Local targeting around accident-prone areas</li>
+                    </ul>
+
+                    <p><strong>Goal: Generate fast consultation calls and case inquiries.</strong></p>
+
+                </div>
+
+                <div class="card fade">
+
+                    <h3>Family & Divorce Attorneys</h3>
+
+                    <p>Family law clients often <strong>research before choosing an attorney</strong>, so trust and credibility are important.</p>
+
+                    <p>Our strategy includes:</p>
+
+                    <ul>
+                        <li>Informational and consultation-based searches</li>
+                        <li>Trust-building landing pages</li>
+                        <li>Local SEO targeting city-based searches</li>
+                        <li>Reputation and review management</li>
+                    </ul>
+
+                    <p><strong>Goal: Generate consultation bookings from people researching legal options.</strong></p>
+
+                </div>
+
+                <div class="card fade">
+
+                    <h3>Criminal Defense Lawyers</h3>
+
+                    <p>Criminal defense marketing is highly <strong>urgent and call-driven.</strong></p>
+
+                    <p>Our strategy focuses on:</p>
+
+                    <ul>
+                        <li>Emergency-based searches like “criminal lawyer near me”</li>
+                        <li>Mobile-first ad campaigns</li>
+                        <li>Click-to-call focused landing pages</li>
+                        <li>High visibility in search results</li>
+                    </ul>
+
+                    <p><strong>Goal: Capture urgent legal consultations quickly.</strong></p>
+
+                </div>
+
             </div>
 
-            <div class="faq-item fade">
-                <h3>How long does it take to get results?</h3>
-                <div class="faq-answer">Paid search generates leads quickly while SEO builds long-term visibility.</div>
-            </div>
+            <div class="grid-2" style="margin-top:30px">
 
-            <div class="faq-item fade">
-                <h3>Do you work with firms across the United States?</h3>
-                <div class="faq-answer">Yes, we work with law firms nationwide.</div>
+                <div class="card fade">
+
+                    <h3>Immigration Lawyers</h3>
+
+                    <p>Immigration law clients often search for <strong>specific services and visa categories.</strong></p>
+
+                    <p>Our strategy includes:</p>
+
+                    <ul>
+                        <li>Visa-specific keyword targeting</li>
+                        <li>Multilingual audience targeting when needed</li>
+                        <li>Educational landing pages</li>
+                        <li>Consultation booking funnels</li>
+                    </ul>
+
+                    <p><strong>Goal: Attract individuals seeking guidance on immigration processes.</strong></p>
+
+                </div>
+
+                <div class="card fade">
+
+                    <h3>Business & Corporate Attorneys</h3>
+
+                    <p>Business law marketing often requires <strong>targeting companies and decision-makers</strong> rather than individual clients.</p>
+
+                    <p>Our strategy includes:</p>
+
+                    <ul>
+                        <li>B2B search campaigns</li>
+                        <li>Corporate legal service keywords</li>
+                        <li>Professional authority positioning</li>
+                        <li>Account-based outreach using LinkedIn Sales Navigator</li>
+                    </ul>
+
+                    <p><strong>Goal: Generate high-value legal consultations from businesses.</strong></p>
+
+                </div>
+
             </div>
 
         </div>
 
     </section>
+
+
+    <!-- OPTIMIZATION + REPORTING -->
+
+    <section class="optimize-section">
+
+        <div class="container">
+
+            <h2 class="section-title">Continuous Campaign Optimization</h2>
+
+            <div class="box-grid">
+
+                <div class="info-box">Search impression share</div>
+
+                <div class="info-box">Top-of-page ad visibility</div>
+
+                <div class="info-box">Cost per consultation</div>
+
+                <div class="info-box">Conversion rate from landing pages</div>
+
+                <div class="info-box">Keyword performance</div>
+
+            </div>
+
+            <p class="section-note">
+                This helps ensure your marketing budget is focused on
+                <strong>strategies that generate real client opportunities.</strong>
+            </p>
+
+        </div>
+
+    </section>
+    <section class="report-section">
+
+        <div class="container">
+
+            <h2 class="section-title">Clear Reporting & Transparency</h2>
+
+            <div class="box-grid">
+
+                <div class="info-box">Lead volume trends</div>
+
+                <div class="info-box">Campaign performance insights</div>
+
+                <div class="info-box">Keyword and search performance</div>
+
+                <div class="info-box">Opportunities for improvement</div>
+
+            </div>
+
+            <p class="section-note">
+                This allows firms to understand
+                <strong>how digital marketing contributes to new client opportunities.</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY CHOOSE US -->
+
+    <section class="why-simple">
+
+        <div class="container">
+
+            <h2 class="why-title">Why Law Firms Choose Us</h2>
+
+            <div class="why-lines">
+
+                <p class="line line1">Data-driven campaigns built for measurable results.</p>
+
+                <p class="line line2">High-intent keyword targeting that reaches clients actively searching for legal help.</p>
+
+                <p class="line line3">Conversion-focused landing pages designed to turn visitors into consultations.</p>
+
+                <p class="line line4">Transparent reporting so firms clearly see how marketing contributes to real case opportunities.</p>
+
+                <p class="line line5">Industry-specific strategy backed by years of digital marketing experience.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
     <!-- CTA -->
 
-    <section class="cta">
+    <section class="final-cta">
 
-        <div class="container fade">
+        <div class="container">
 
-            <h2>Ready to Grow Your Law Firm with Smarter Marketing?</h2>
+            <h2>Ready to Grow Your Law Firm with a Smarter Marketing Strategy?</h2>
 
-            <p>Request a free marketing audit and strategy consultation.</p>
+            <p>
+                If your firm wants to attract more people actively searching for legal help, we can create a customized marketing strategy tailored to your practice areas and location.
+            </p>
 
-            <br>
+            <div class="cta-buttons">
 
-            <a class="btn">Request Free Marketing Audit</a>
-            <a class="btn" style="margin-left:10px;">Book Strategy Consultation</a>
+                <a class="btn">Request a Free Marketing Audit</a>
+
+                <a class="btn btn-outline">Book a Strategy Consultation</a>
+
+            </div>
 
         </div>
 
     </section>
+
 
     <!-- FOOTER -->
 
@@ -647,28 +1543,19 @@
 
     </footer>
 
-    <script>
-        /* SCROLL ANIMATION */
 
-        const elements = document.querySelectorAll(".fade");
+    <script>
+        const elements = document.querySelectorAll(".fade")
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
+                    entry.target.classList.add("show")
                 }
-            });
-        });
+            })
+        })
 
-        elements.forEach(el => observer.observe(el));
-
-        /* FAQ */
-
-        document.querySelectorAll(".faq-item").forEach(item => {
-            item.addEventListener("click", () => {
-                item.classList.toggle("active");
-            });
-        });
+        elements.forEach(el => observer.observe(el))
     </script>
 
 </body>
